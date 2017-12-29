@@ -118,10 +118,21 @@ Titles.draw = function(gd, titleClass, options) {
     }
 
     function drawTitle(titleEl) {
-        titleEl.attr('transform', transform ?
-            'rotate(' + [transform.rotate, attributes.x, attributes.y] +
-                ') translate(0, ' + transform.offset + ')' :
-            null);
+        var transformVal;
+
+        if(transform) {
+            transformVal = '';
+            if(transform.rotate) {
+                transformVal += 'rotate(' + [transform.rotate, attributes.x, attributes.y] + ')';
+            }
+            if(transform.offset) {
+                transformVal += 'translate(0, ' + transform.offset + ')';
+            }
+        } else {
+            transformVal = null;
+        }
+
+        titleEl.attr('transform', transformVal);
 
         titleEl.style({
             'font-family': font,

@@ -48,6 +48,7 @@ module.exports = function calc(gd, trace) {
     }
 
     var ppad = calcMarkerSize(trace, len);
+    // TODO should I remove that `tozero: true` ???
     Axes.expand(radialAxis, rArray, {tozero: true, ppad: ppad});
 
     if(angularAxis.type !== 'linear') {

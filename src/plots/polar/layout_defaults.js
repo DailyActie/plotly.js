@@ -85,6 +85,8 @@ function handleDefaults(contIn, contOut, coerce, opts) {
         //
         // Mocked domains and ranges are set by the polar subplot instances.
         // By setting, _m to 1 here, we make Axes.expand think that range[1] > range[0].
+        //
+        // TODO is this correct for `radialaxis.autorange: 'reversed'`
         axOut._m = 1;
 
         switch(axName) {
@@ -99,6 +101,12 @@ function handleDefaults(contIn, contOut, coerce, opts) {
                     coerceAxis('side');
                     coerceAxis('position', sector[0]);
 
+                    coerceAxis('title');
+                    Lib.coerceFont(coerceAxis, 'titlefont', {
+                        family: opts.font.family,
+                        size: Math.round(opts.font.size * 1.2),
+                        color: dfltFontColor
+                    });
                 }
                 break;
 

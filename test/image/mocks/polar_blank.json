@@ -18,7 +18,7 @@
     "mode": "markers+text",
     "r": [0],
     "theta": [0],
-    "text": "<b>N.B.</b><br>auotrange<br>for (0,0)<br>gives [-1,1]",
+    "text": "<b>N.B.</b><br>radial<br>auotrange<br>for (0,0)<br>gives [0,1]",
     "textposition": "left",
     "subplot": "polar4"
   }],

@@ -40,7 +40,10 @@ module.exports = {
         dflt: 'degrees',
         role: 'info',
         editType: 'calc+clearAxisTypes',
-        description: 'Sets the unit of input *theta* values.'
+        description: [
+            'Sets the unit of input *theta* values.',
+            'Has an effect only when on *linear* angular axes.'
+        ].join(' ')
     },
 
     // TODO not sure r0,  dr, theta0, dtheta
